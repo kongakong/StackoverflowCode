@@ -22,8 +22,8 @@
 		930161C318C9A353007CB70C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 930161C118C9A353007CB70C /* InfoPlist.strings */; };
 		930161C518C9A353007CB70C /* TestKBWithLabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 930161C418C9A353007CB70C /* TestKBWithLabelTests.m */; };
 		930161D018CAA4D7007CB70C /* TKWLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930161CF18CAA4D7007CB70C /* TKWLCell.m */; };
-		93D2BAC918CB041500FA64DF /* TKWLUICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D2BAC818CB041500FA64DF /* TKWLUICollectionView.m */; };
 		93D2BACC18CB059F00FA64DF /* TKWLUICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D2BACB18CB059F00FA64DF /* TKWLUICollectionViewCell.m */; };
+		93D2BACF18CB203700FA64DF /* TKWLUICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D2BACE18CB203700FA64DF /* TKWLUICollectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,10 +58,10 @@
 		930161C418C9A353007CB70C /* TestKBWithLabelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestKBWithLabelTests.m; sourceTree = "<group>"; };
 		930161CE18CAA4D7007CB70C /* TKWLCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWLCell.h; sourceTree = "<group>"; };
 		930161CF18CAA4D7007CB70C /* TKWLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKWLCell.m; sourceTree = "<group>"; };
-		93D2BAC718CB041500FA64DF /* TKWLUICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWLUICollectionView.h; sourceTree = "<group>"; };
-		93D2BAC818CB041500FA64DF /* TKWLUICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKWLUICollectionView.m; sourceTree = "<group>"; };
 		93D2BACA18CB059F00FA64DF /* TKWLUICollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKWLUICollectionViewCell.h; path = ../TKWLUICollectionViewCell.h; sourceTree = "<group>"; };
 		93D2BACB18CB059F00FA64DF /* TKWLUICollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKWLUICollectionViewCell.m; path = ../TKWLUICollectionViewCell.m; sourceTree = "<group>"; };
+		93D2BACD18CB203700FA64DF /* TKWLUICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKWLUICollectionView.h; path = ../TKWLUICollectionView.h; sourceTree = "<group>"; };
+		93D2BACE18CB203700FA64DF /* TKWLUICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKWLUICollectionView.m; path = ../TKWLUICollectionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +121,8 @@
 		9301619F18C9A352007CB70C /* TestKBWithLabel */ = {
 			isa = PBXGroup;
 			children = (
+				93D2BACD18CB203700FA64DF /* TKWLUICollectionView.h */,
+				93D2BACE18CB203700FA64DF /* TKWLUICollectionView.m */,
 				93D2BACA18CB059F00FA64DF /* TKWLUICollectionViewCell.h */,
 				93D2BACB18CB059F00FA64DF /* TKWLUICollectionViewCell.m */,
 				930161CE18CAA4D7007CB70C /* TKWLCell.h */,
@@ -128,8 +130,6 @@
 				930161A818C9A353007CB70C /* TKWLAppDelegate.h */,
 				930161A918C9A353007CB70C /* TKWLAppDelegate.m */,
 				930161AB18C9A353007CB70C /* Main.storyboard */,
-				93D2BAC718CB041500FA64DF /* TKWLUICollectionView.h */,
-				93D2BAC818CB041500FA64DF /* TKWLUICollectionView.m */,
 				930161AE18C9A353007CB70C /* TKWLViewController.h */,
 				930161AF18C9A353007CB70C /* TKWLViewController.m */,
 				930161B118C9A353007CB70C /* Images.xcassets */,
@@ -266,8 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				930161B018C9A353007CB70C /* TKWLViewController.m in Sources */,
-				93D2BAC918CB041500FA64DF /* TKWLUICollectionView.m in Sources */,
 				93D2BACC18CB059F00FA64DF /* TKWLUICollectionViewCell.m in Sources */,
+				93D2BACF18CB203700FA64DF /* TKWLUICollectionView.m in Sources */,
 				930161AA18C9A353007CB70C /* TKWLAppDelegate.m in Sources */,
 				930161A618C9A353007CB70C /* main.m in Sources */,
 				930161D018CAA4D7007CB70C /* TKWLCell.m in Sources */,
