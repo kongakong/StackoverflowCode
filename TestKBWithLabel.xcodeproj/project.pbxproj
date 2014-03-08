@@ -21,6 +21,7 @@
 		930161BB18C9A353007CB70C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9301619D18C9A352007CB70C /* UIKit.framework */; };
 		930161C318C9A353007CB70C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 930161C118C9A353007CB70C /* InfoPlist.strings */; };
 		930161C518C9A353007CB70C /* TestKBWithLabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 930161C418C9A353007CB70C /* TestKBWithLabelTests.m */; };
+		930161D018CAA4D7007CB70C /* TKWLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 930161CF18CAA4D7007CB70C /* TKWLCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		930161C018C9A353007CB70C /* TestKBWithLabelTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestKBWithLabelTests-Info.plist"; sourceTree = "<group>"; };
 		930161C218C9A353007CB70C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		930161C418C9A353007CB70C /* TestKBWithLabelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestKBWithLabelTests.m; sourceTree = "<group>"; };
+		930161CE18CAA4D7007CB70C /* TKWLCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWLCell.h; sourceTree = "<group>"; };
+		930161CF18CAA4D7007CB70C /* TKWLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKWLCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 		9301619F18C9A352007CB70C /* TestKBWithLabel */ = {
 			isa = PBXGroup;
 			children = (
+				930161CE18CAA4D7007CB70C /* TKWLCell.h */,
+				930161CF18CAA4D7007CB70C /* TKWLCell.m */,
 				930161A818C9A353007CB70C /* TKWLAppDelegate.h */,
 				930161A918C9A353007CB70C /* TKWLAppDelegate.m */,
 				930161AB18C9A353007CB70C /* Main.storyboard */,
@@ -253,6 +258,7 @@
 				930161B018C9A353007CB70C /* TKWLViewController.m in Sources */,
 				930161AA18C9A353007CB70C /* TKWLAppDelegate.m in Sources */,
 				930161A618C9A353007CB70C /* main.m in Sources */,
+				930161D018CAA4D7007CB70C /* TKWLCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

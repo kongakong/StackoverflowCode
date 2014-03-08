@@ -7,6 +7,7 @@
 //
 
 #import "TKWLViewController.h"
+#import "TKWLCell.h"
 
 @interface TKWLViewController ()
 
@@ -24,6 +25,31 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    
+    TKWLCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[TKWLCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                               reuseIdentifier:CellIdentifier];
+    }
+    
+
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    [cell.lblTest setText:[NSString stringWithFormat:@"cell %d", indexPath.row]];
+
+    return cell;
 }
 
 @end
