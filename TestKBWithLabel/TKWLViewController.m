@@ -45,7 +45,7 @@
                                reuseIdentifier:CellIdentifier];
     }
     
-    UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    UITextField *tf = [[UITextField alloc] initWithFrame:[cell bounds]];
     [tf setKeyboardType:UIKeyboardTypeNumberPad];
     [cell.lblTest addSubview:tf];
     [cell.lblTest setUserInteractionEnabled:YES];
