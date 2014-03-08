@@ -25,11 +25,11 @@
 //        [tf setKeyboardType:UIKeyboardTypeNumberPad];
 //        [self.lblTest addSubview:tf];
 //        [self.lblTest setUserInteractionEnabled:YES];
-        
-        NSLog(@"Adding UITapGestureRecognizer");
-        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-        [self.lblTest addGestureRecognizer:singleTap];
-        [self.lblTest setUserInteractionEnabled:YES];
+//        
+//        NSLog(@"Adding UITapGestureRecognizer");
+//        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+//        [self.lblTest addGestureRecognizer:singleTap];
+//        [self.lblTest setUserInteractionEnabled:YES];
     }
     return self;
 }

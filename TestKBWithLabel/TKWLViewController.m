@@ -45,7 +45,12 @@
                                reuseIdentifier:CellIdentifier];
     }
     
+    UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [tf setKeyboardType:UIKeyboardTypeNumberPad];
+    [cell.lblTest addSubview:tf];
+    [cell.lblTest setUserInteractionEnabled:YES];
 
+    
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     [cell.lblTest setText:[NSString stringWithFormat:@"cell %d", indexPath.row]];
 

@@ -48,7 +48,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="lblTest" destination="SUD-OI-r4j" id="hfW-MC-di4"/>
+                                    <outlet property="lblTest" destination="SUD-OI-r4j" id="Hti-Uu-8Wf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
