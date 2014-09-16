@@ -1,4 +1,4 @@
--module(ex2_2).
+-module(ex2_3).
 -export([make_sample_tree/0, test_insert/0, test_traverse/0, test_member/0]).
 
 -record(treenode, {key, value}).
@@ -55,7 +55,6 @@ cmp_int(A, B) when A > B ->
 cmp_int(A, B) ->
     equal.
 
-
 member(K, #tree{treenode=#treenode{key=K}}=Tree, _CmpFunc) -> 
     found;
 member(K, #tree{treenode=#treenode{key=CurK}}=Tree) when K < CurK -> 
@@ -65,7 +64,6 @@ member(K, #tree{treenode=#treenode{key=CurK}}=Tree) when K < CurK ->
     member(K, Tree#tree.right);
 member(K, undefined) ->
     not_found.
-
 
 %% routines for testings
 %% 
