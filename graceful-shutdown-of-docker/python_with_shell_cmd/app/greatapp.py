@@ -22,10 +22,11 @@ signal.signal(signal.SIGUSR1, docker_shutdown_handler)
 
 
 def main():
-    print "Hello"
+    LOG.info("Hello!")
+    sleep_time = 2
     while True:
-        time.sleep(10)
-        print "Checking..."
+        time.sleep(sleep_time)
+        LOG.info("Checking every %ds...", sleep_time)
 
 
 if __name__ == '__main__':
