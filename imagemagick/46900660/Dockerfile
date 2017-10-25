@@ -15,3 +15,7 @@ RUN wget --no-check-certificate https://github.com/ImageMagick/ImageMagick/archi
     make install && \
     ldconfig /usr/local/lib
 
+
+WORKDIR /
+COPY *.pdf /
+COPY *.sh /
