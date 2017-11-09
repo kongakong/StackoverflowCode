@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 
 RUN apt-get update --fix-missing 
-RUN apt-get install -y libmagickwand-dev wget
+RUN apt-get install -y libmagickwand-dev wget vim
 
 
 WORKDIR '/src'
