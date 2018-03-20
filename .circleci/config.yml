@@ -6,9 +6,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Git push
           command: |
-            apt-get update --fix-missing
-            apt-get install -y git
+            sudo apt-get update --fix-missing
+            sudo apt-get install -y git
             git config --global user.email "anthony.hw.kong@gmail.com"
             git config --global user.name "Anthony Kong (circleci)"
             git config --global push.default simple
