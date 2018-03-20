@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build: 
+    docker: 
+      image: ubuntu
+    steps:
+      - checkout
+      - run:
+          command: |
+            git config --global user.email "anthony.hw.kong@gmail.com"
+            git config --global user.name "Anthony Kong (circleci)"
+            git config --global push.default simple
+            git tag -a 20180320 -m test
+            git push origin 20180320
