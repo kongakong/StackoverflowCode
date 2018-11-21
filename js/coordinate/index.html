@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+<script>
+
+function doit() {
+    var wsh = window.screen.height;
+    var wsw = window.screen.width;
+    var sx = window.parent.screenX;
+    var sy = window.parent.screenY;
+    var systems = "wsh " + wsh +",wsw " + wsw + ",sx " + sx + ",sy " + sy; 
+    var subtop = sy + (window.innerHeight - 300);
+    var subleft = sx + (window.innerWidth - 550);
+    var features = "top=" + subtop + ",left=" + subleft + ", height=300, width=550";
+    console.log(features);
+    $('#features').text(features);
+    $('#system').text(systems);
+    window.open('', 'test', features);
+}
+</script>
+</head>
+<body>
+    <div>Hello</div>
+    <div>
+    <button onClick="doit()">Test</button>
+    </div>
+    <div id="system">
+    </div>
+    <div id="features">
+    </div>
+</body>
+</html>
