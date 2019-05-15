@@ -15,7 +15,7 @@ function doit() {
     var sx = window.parent.screenX;
     var sy = window.parent.screenY;
     var systems = "wsh " + wsh +",wsw " + wsw + ",sx " + sx + ",sy " + sy; 
-    var subtop = sy + (window.innerHeight - 300);
+    var subtop = sy + (window.outerHeight - 300);
     var subleft = sx + (window.innerWidth - 550);
     var features = "top=" + subtop + ",left=" + subleft + ", height=300, width=550";
     console.log(features);
