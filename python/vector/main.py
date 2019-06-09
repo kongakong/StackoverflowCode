@@ -17,6 +17,8 @@ def main():
     # test.assert_equals(a.norm(), 14 ** 0.5)
     print a
     print b
+    print a.add(b)
+    print a.add(b)
     print a.subtract(b)
     print a.dot(b)
     print a.norm()
