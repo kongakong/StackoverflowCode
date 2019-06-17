@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+
+# In a very simple version, the url generated is
+# https://zeetings-upload-play.s3.amazonaws.com/1-2-bcea83ce-22d4-4785-b066-f038fedb9787.pptx?AWSAccessKeyId=ABC&content-type=image%2Fjpeg&Expires=1560840279&Signature=ZJRC4QFMAXYCrauF%2FdTVlEjnnF8%3D
+
 import boto3
 from datetime import datetime, date, time
 
@@ -26,9 +30,10 @@ def main():
     s3_bucket = 'zeetings-upload-play'
     object_name = '1-2-bcea83ce-22d4-4785-b066-f038fedb9787.pptx'
     mime_type = 'image/jpeg'
-    d = date(2019, 7, 14)
-    t = time(12, 30)
-    expires = datetime.combine(d, t)
+    # d = date(2019, 7, 14)
+    # t = time(12, 30)
+    # expires = datetime.combine(d, t)
+    expires = 24 * 60 * 60 # link expriy in sec
     print sign(key, secret, s3_bucket, object_name, mime_type, expires)
 
 
