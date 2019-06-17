@@ -13,16 +13,15 @@ from datetime import datetime, date, time
 def sign(access_key, secret_key, s3_bucket, object_name, mime_type, expires, region):
     s3_client = boto3.client('s3',
 # For v4
-#                            config=Config(signature_version='s3v4'),
+                             config=Config(signature_version='s3v4'),
                              region_name=region,
                              aws_access_key_id=access_key,
                              aws_secret_access_key=secret_key)
 
-    # Don't include content type
     params = {
         'Bucket': s3_bucket,
     	'Key': object_name,
-# disable if v2
+# disable if v4
 #        'ContentType': mime_type
         }
 
