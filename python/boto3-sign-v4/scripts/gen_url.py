@@ -17,10 +17,11 @@ def sign(access_key, secret_key, s3_bucket, object_name, mime_type, expires, reg
                              aws_access_key_id=access_key,
                              aws_secret_access_key=secret_key)
 
+    # Don't include content type
+    #    'ContentType': mime_type
     params = {
         'Bucket': s3_bucket,
     	'Key': object_name,
-        'ContentType': mime_type
         }
 
     response = s3_client.generate_presigned_url('put_object',
@@ -37,9 +38,6 @@ def main(key, secret):
     object_name = '1-2-bcea83ce-22d4-4785-b066-f038fedb9787.pptx'
     mime_type = 'image/jpeg'
     region = 'us-west-2'
-    # d = date(2019, 7, 14)
-    # t = time(12, 30)
-    # expires = datetime.combine(d, t)
     expires = 24 * 60 * 60 # link expriy in sec
     print sign(key, secret, s3_bucket, object_name, mime_type, expires, region)
 
