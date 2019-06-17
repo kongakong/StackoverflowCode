@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 RUN apt-get update --fix-missing
-RUN apt-get install -y python python-pip
+RUN apt-get install -y vim python python-pip
 
 RUN mkdir scripts
 COPY scripts/requirements.txt scripts
