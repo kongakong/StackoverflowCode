@@ -10,9 +10,10 @@ import boto3
 from botocore.client import Config
 from datetime import datetime, date, time
 
-def sign(access_key, secret_key, s3_bucket, object_name, mime_type, expires):
+def sign(access_key, secret_key, s3_bucket, object_name, mime_type, expires, region):
     s3_client = boto3.client('s3',
                              config=Config(signature_version='s3v4'),
+                             region_name=region,
                              aws_access_key_id=access_key,
                              aws_secret_access_key=secret_key)
 
@@ -35,11 +36,12 @@ def main(key, secret):
     s3_bucket = 'zeetings-upload-play'
     object_name = '1-2-bcea83ce-22d4-4785-b066-f038fedb9787.pptx'
     mime_type = 'image/jpeg'
+    region = 'us-west-2'
     # d = date(2019, 7, 14)
     # t = time(12, 30)
     # expires = datetime.combine(d, t)
     expires = 24 * 60 * 60 # link expriy in sec
-    print sign(key, secret, s3_bucket, object_name, mime_type, expires)
+    print sign(key, secret, s3_bucket, object_name, mime_type, expires, region)
 
 
 if __name__ == '__main__':

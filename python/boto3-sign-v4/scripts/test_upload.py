@@ -14,8 +14,8 @@ def upload_me(file_path, key=None, secret=None):
     expires = 24 * 60 * 60 # link expriy in sec
     os.environ['AWS_ACCESS_KEY_ID'] = access_key
     os.environ['AWS_SECRET_ACCESS_KEY'] = secret_key
-    print os.environ
-    url = sign(key, secret, s3_bucket, object_name, mime_type, expires)
+    region = 'us-west-2'
+    url = sign(key, secret, s3_bucket, object_name, mime_type, expires, region)
     print url
     with open(file_path, 'r') as f:
         resp = requests.post(url, data=f)
