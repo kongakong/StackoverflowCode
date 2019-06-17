@@ -17,14 +17,13 @@ def upload_me(file_path, key=None, secret=None):
     region = 'us-west-2'
     url = sign(key, secret, s3_bucket, object_name, mime_type, expires, region)
     print url
-    with open(file_path, 'r') as f:
-        resp = requests.post(url, data=f)
+    with open(file_path, 'rb') as f:
+        resp = requests.put(url, data=f)
         print resp.content
 
 
 if __name__ == '__main__':
     argc = len(sys.argv)
-    print argc
     key = secret = None
     if argc == 2 or argc == 4:
         file_path = sys.argv[1]
