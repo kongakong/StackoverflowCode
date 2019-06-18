@@ -5,6 +5,10 @@ from gen_url import sign
 import requests
 import uuid
 
+import httplib as http_client
+http_client.HTTPConnection.debuglevel = 1
+
+
 def upload_me(file_path, key=None, secret=None):
     access_key = 'ABC' if key is None else key
     secret_key = 'EDF' if secret is None else secret
