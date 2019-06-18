@@ -15,7 +15,7 @@ from boto.s3.connection import S3Connection
 def sign(access_key, secret_key, bucket, path, mime_type, expiry, region):
     os.environ['S3_USE_SIGV4'] = 'True'
     boto.set_stream_logger('boto')
-    c = S3Connection(access_key, secret_key, host='s3.amazonaws.com')
+    c = S3Connection(access_key, secret_key, host='s3-us-west-2.amazonaws.com')
     return c.generate_url_sigv4(
                   expires_in=long(expiry),
                   method='PUT',
