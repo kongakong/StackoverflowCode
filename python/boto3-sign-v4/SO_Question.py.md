@@ -46,6 +46,8 @@ def _generate_presigned_url(mime_type, expires, s3_bucket, object_name,
     # Step 4: Create the canonical headers and signed headers. Header names
     # must be trimmed and lowercase, and sorted in code point order from
     # low to high. Note that there is a trailing \n.
+
+    # ME: Not modifing the headers
     # canonical_headers = 'host:' + host + '\n' + 'x-amz-date:' + amzdate + '\n'
     canonical_headers = 'host:' + host + '\n'
 
@@ -54,6 +56,8 @@ def _generate_presigned_url(mime_type, expires, s3_bucket, object_name,
     # Note: The request can include any headers; canonical_headers and
     # signed_headers lists those that you want to be included in the
     # hash of the request. "Host" and "x-amz-date" are always required.
+
+    # ME: Not modifing the headers
     # signed_headers = 'host;x-amz-date'
     signed_headers = 'host'
 
@@ -62,6 +66,7 @@ def _generate_presigned_url(mime_type, expires, s3_bucket, object_name,
     payload_hash = hashlib.sha256(('').encode('utf-8')).hexdigest()
 
     # Step 7: Combine elements to create canonical request
+    # ME: payload is unknown at this point. The presigned_url will be returned to a javascript client for upload
     # canonical_request = method + '\n' + canonical_uri + '\n' + canonical_querystring + '\n' + canonical_headers + '\n' + signed_headers + '\n' + payload_hash
     canonical_request = method + '\n' + canonical_uri + '\n' + canonical_querystring + '\n' + canonical_headers + '\n' + signed_headers
 
@@ -90,7 +95,7 @@ def _generate_presigned_url(mime_type, expires, s3_bucket, object_name,
                             ', ' +  'SignedHeaders=' + signed_headers + \
                            ', ' + 'Signature=' + signature
 
-    # X-Amz-Expires
+    # ME: Use a list of tuple so I can apply urlencode later
     authorization =[
         ('X-Amz-Algorithm', algorithm),
         ('X-Amz-Expires', '86400'),
@@ -100,7 +105,6 @@ def _generate_presigned_url(mime_type, expires, s3_bucket, object_name,
         ('X-Amz-Signature', signature),
     ]
 
-    # authorization_query = "&".join("{}={}".format(auth[0], quote(auth[1])) for auth in authorization)
     authorization_query = urlencode(authorization)
 
     # The request can include any headers, but MUST include "host", "x-amz-date",
@@ -108,9 +112,10 @@ def _generate_presigned_url(mime_type, expires, s3_bucket, object_name,
     # be included in the canonical_headers and signed_headers, as noted
     # earlier. Order here is not significant.
     # Python note: The 'host' header is added automatically by the Python 'requests' library.
+
+    # ME: not using headers because I want a presigned url
     # headers = {'x-amz-date': amzdate, 'Authorization': authorization_header}
     
-
 
     # ************* SEND THE REQUEST *************
     request_url = endpoint + '?' + authorization_query
