@@ -7,18 +7,18 @@
 
 import sys
 from datetime import datetime, date, time
+import boto
 from boto.s3.connection import S3Connection
 
 
 def sign(access_key, secret_key, bucket, path, mime_type, expiry, region):
-       c = S3Connection(access_key, secret_key)
-       return c.generate_url(
+    boto.set_stream_logger('boto')
+    c = S3Connection(access_key, secret_key)
+    return c.generate_url_sigv4(
                   expires_in=long(expiry),
                   method='PUT',
-                  bucket = bucket,
-                  key=path,
-                  query_auth=True,
-                  force_http=False
+                  bucket=bucket,
+                  key=path
                   )
 
 
