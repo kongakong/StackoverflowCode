@@ -10,3 +10,8 @@
 ### Check
 
      docker container lis
+
+
+### taint
+
+     terraform taint
