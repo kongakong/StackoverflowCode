@@ -6,15 +6,11 @@ def display_book(book):
 
     info = root.iter("catalog")
     
-    print info
-
     for elem in info:
-        print elem
-        name = elem.find("book").attrib['id']
-        print name
-
-        if name == book:
-            print(name)
+        books = elem.findall("book")
+        for book in books:
+            print book.attrib['id']
+            
 
     return "Book Not Found"
 
