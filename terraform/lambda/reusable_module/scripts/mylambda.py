@@ -1,6 +1,6 @@
 import os
 
-def handler():
+def handler(event, context):
     dummy = os.environ['DUMMY']
     print(dummy)
 
