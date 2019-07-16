@@ -1,5 +1,6 @@
 variable "env" {}
 variable "region" {}
+variable "function_name" {}
 
 provider "aws" {
   region = "${var.region}"
@@ -24,11 +25,16 @@ resource "aws_iam_role" "mylambda_role" {
 }
 EOF
 }
- 
+
+locals {
+    default_function_name = "${var.env}-mylambda"
+    final_function_name = "${var.function_name != "" ? var.function_name : local.default_function_name}"
+}
+
 module "mylambda" {
     source = "../base"
     lambda_filename = "mylambda"
-    function_name = "${var.env}-mylambda"
+    function_name = "${local.final_function_name}"
     env = "${var.env}"
     role = "${aws_iam_role.mylambda_role.arn}"
     script_env_vars = {
