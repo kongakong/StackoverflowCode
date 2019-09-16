@@ -1,4 +1,3 @@
-   
 #include <iostream>
 #include <string>
 using namespace std;
@@ -71,7 +70,6 @@ public:
                     cout << "Your Carryweight is now: " << carryWeight << endl;
                     cout << "Your Unarmed combat skill: " << unarmed << endl;
                     cout << "Your Melee Weapons skill is now: " << meleeWeapons << endl;
-                    system("PAUSE");
                     break;
 
             case 2:
@@ -85,7 +83,6 @@ public:
                 cout << "Your Carryweight is now: " << carryWeight << endl;
                 cout << "Your Unarmed combat skill: " << unarmed << endl;
                 cout << "Your Melee Weapons skill is now: " << meleeWeapons << endl;
-                system("PAUSE");
                 break;
             case 3:
                     cout << "Perception:" << perception << endl;
@@ -112,7 +109,6 @@ public:
                     endurance += 1;
                     health += 20;
                     cout << "Your Endurance points are now: " << endurance << endl;
-                    system("PAUSE");
                 break;
             case 6:
                 cout << "Endurance: " << endurance << endl;
@@ -120,7 +116,6 @@ public:
                 endurance -= 1;
                 health -= 20;
                 cout << "Your Endurance points are now: " << endurance << endl;
-                system("PAUSE");
                 break;
             case 7:
                 cout << "Charisma: " << charisma << endl;
@@ -129,7 +124,6 @@ public:
                 speech += 5;
                 barter += 5;
                 cout << "Your Charisma points are now: " << charisma << endl;
-                system("PAUSE");
                 break;
             case 8:
                 cout << "Charisma: " << charisma << endl;
@@ -138,7 +132,6 @@ public:
                 speech -= 5;
                 barter -= 5;
                 cout << "Your Charisma points are now: " << charisma << endl;
-                system("PAUSE");
                 break;
             case 9:
                 cout << "Intelligence: " << intelligence << endl;
@@ -150,7 +143,6 @@ public:
                 cout << "Your Intelligence points are now: " << intelligence << endl;
                 cout << "Your repair points are now: " << repair << endl;
                 cout << "Your science point are now: " << science << endl;
-                system("Pause");
                 break;
             case 10:
                 cout << "Intelligence: " << intelligence << endl;
@@ -162,37 +154,6 @@ public:
                 cout << "Your Intelligence points are now: " << intelligence << endl;
                 cout << "Your repair points are now: " << repair << endl;
                 cout << "Your science point are now: " << science << endl;
-                system("Pause");
-                break;
-            case 11:
-                cout << "Agility: " << agility << endl;
-                points--;
-                agility += 1;
-                lockpick += 2;
-                actionPoints += 2;
-                cout << "Your Agility points are now: " << agility << endl;
-                cout << "Your Lockpick points are now: " << lockpick << endl;
-                cout << "Your Action Points are now: " << actionPoints << endl;
-                system("Pause");
-                break;
-            case 12:
-                cout << "Agility: " << agility << endl;
-                points++;
-                agility -= 1;
-                lockpick -= 2;
-                actionPoints -= 2;
-                cout << "Your Agility points are now: " << agility << endl;
-                cout << "Your Lockpick points are now: " << lockpick << endl;
-                cout << "Your Action Points are now: " << actionPoints << endl;
-                system("Pause");
-                break;
-
-            case 13:
-                cout << "Luck:" << luck << endl;
-                points--;
-                luck += 1;
-                critHitchance += 5;
-                system("Pause");
                 break;
             case 14:
                 cout << "Strength: " << strength << endl;
