@@ -1,0 +1,11 @@
+{% with flavor="dev" %}
+  {% include "inner.j2" %}
+{% endwith %}
+
+{% with flavor="uat" %}
+  {% include "inner.j2" %}
+{% endwith %}
+
+{% with flavor="prod" %}
+  {% include "inner.j2" %}
+{% endwith %}

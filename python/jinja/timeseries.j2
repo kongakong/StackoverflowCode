@@ -1,0 +1,24 @@
+{#########################################################################
+  This is a template for a timeseries graph. 
+  For further information about the structure syntax, please see: 
+  https://www.terraform.io/docs/providers/datadog/r/timeboard.html
+
+  @param title The name of the graph that you want displayed on Datadog
+  @param queries The JSON queries retrieving the data to be graphed
+  @param type The timeseries line type. Options: line | area
+##########################################################################}
+graph {
+  title = "{{title}}"
+  viz = "timeseries"
+  {% for q in queries %}
+  request {
+    q = "{{q}}"
+    type = "{{type}}"
+    style = {
+      palette = "dog_classic"
+      type = "{{linetype|default("solid")}}"
+      width = "normal"
+    }
+  }
+  {% endfor %}
+}

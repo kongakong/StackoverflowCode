@@ -1,0 +1,25 @@
+{%- set graph = "timeseries.j2" -%}
+
+{%- with
+  title = "aws.rds.free_storage_space",
+  queries = [
+    {{ "avg:aws.rds.free_storage_space{name:" + flavor + "-db-read-0}" }} ,
+
+    "avg:aws.rds.free_storage_space{name:dev-db-read-1}",
+    "avg:aws.rds.free_storage_space{name:dev-db-read-2}",
+    "avg:aws.rds.free_storage_space{name:dev-db-master}",
+    "avg:aws.rds.free_storage_space{name:dev-db-migration}",
+    "avg:aws.rds.free_storage_space{name:dev-db-reports}",
+    "avg:aws.rds.free_storage_space{name:dev-db-cross-region}"
+  ],
+  type = "line"
+-%}
+
+{#################################
+  Do not change below this line
+##################################}
+{%- macro indenting() -%}
+{%- include graph -%}
+{%- endmacro -%}
+{{ indenting() | trim | indent(2) }}
+{%- endwith -%}
