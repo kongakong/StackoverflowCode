@@ -1,6 +1,7 @@
 # https://stackoverflow.com/questions/60256803/australian-bureau-of-statistics-sdmx-timeout-issue
 
-from request import Request
+from pandasdmx import Request
+Agency_Code = 'ABS'
 Dataset_Id = 'ABS_ERP_ASGS2016'
 ABS = Request(Agency_Code)
 data_response = ABS.data(resource_id='ABS_ERP_ASGS2016', params={'startTime': '2018','endTime': '2018'})
