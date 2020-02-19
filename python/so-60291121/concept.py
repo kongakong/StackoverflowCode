@@ -19,7 +19,12 @@ def extract_location(l):
     if l.startswith("Location:"):
         in_location = True
         tmp_location = []
-        tmp_location.append(l[13: -1]) # Don't need 'Location:,,,'
+        # special case
+        if l.endswith(',,,,,,,,,,,,,'):
+            print(l[13:-13])
+            in_location = False
+        else:
+            tmp_location.append(l[13: -1]) # Don't need 'Location:,,,'
     else:
         if in_location:
             tmp_location.append(l)
