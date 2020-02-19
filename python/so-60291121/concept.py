@@ -24,7 +24,7 @@ def extract_location(l):
             print(l[13:-13])
             in_location = False
         else:
-            tmp_location.append(l[13: -1]) # Don't need 'Location:,,,'
+            tmp_location.append(l[13:]) # Don't need 'Location:,,,'
     else:
         if in_location:
             tmp_location.append(l)
