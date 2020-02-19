@@ -1,9 +1,10 @@
 # https://stackoverflow.com/questions/60256803/australian-bureau-of-statistics-sdmx-timeout-issue
+import logging
 
 from pandasdmx import Request
 Agency_Code = 'ABS'
 Dataset_Id = 'ABS_ERP_ASGS2016'
-ABS = Request(Agency_Code)
+ABS = Request(Agency_Code, log_level=logging.INFO)
 data_response = ABS.data(resource_id='ABS_ERP_ASGS2016', params={'startTime': '2018','endTime': '2018'})
 def timeout(self, value):
     self.client.config['timeout'] = 10000
