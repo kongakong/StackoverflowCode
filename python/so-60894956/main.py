@@ -5,7 +5,7 @@ from random import randint
 from sklearn import svm
 
 #read data
-dataframe=pd.read_csv("treshold1.csv")
+dataframe=pd.read_csv("treshold1.csv", sep=";", decimal=",")
 
 
 X = dataframe[['t1']]
