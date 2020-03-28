@@ -1,9 +1,11 @@
 import pandas as pd
+from pandas import DataFrame as df
 import plotly.graph_objects as go
 import requests
 from datetime import date, timedelta
 yesterday = date.today() - timedelta(days=1)
 
+deaths_names = []
 
 confirmed_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'
 deaths_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv'
@@ -19,5 +21,7 @@ for place in deaths[['Province/State','Country/Region']]:
     else:
         deaths_names.append('Province/State')
 
-confirmed['Name'] = df(confirmed_names)
+# confirmed['Name'] = df(confirmed_names)
 deaths['Name'] = df(deaths_names)
+
+print(deaths)
