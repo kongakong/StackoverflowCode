@@ -24,4 +24,5 @@ for place in deaths[['Province/State','Country/Region']]:
 # confirmed['Name'] = df(confirmed_names)
 deaths['Name'] = df(deaths_names)
 
+pd.set_option('display.max_rows', None)
 print(deaths)
