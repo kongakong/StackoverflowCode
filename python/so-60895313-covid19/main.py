@@ -12,17 +12,18 @@ deaths_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/c
 yesterdays_date = yesterday.strftime('%-m/%d/%y')
 
 confirmed = pd.read_csv(confirmed_url)
-deaths = pd.read_csv(deaths_url)
-confirmed.iloc[0]['Country/Region'] #Test
+deaths = pd.read_csv(deaths_url, dtype={'Province/State': str})
+confirmed.iloc[0]['Country/Region'] # Test
 
-for place in deaths[['Province/State','Country/Region']]:
-    if place is float:
-        deaths_names.append('Country/Region')
+
+def fill_data(df):
+    if df['Province/State'].str.count == 0:
+        df['Name'] = df['Country/Region']
     else:
-        deaths_names.append('Province/State')
+        df['Name'] = df['Province/State']
 
-# confirmed['Name'] = df(confirmed_names)
-deaths['Name'] = df(deaths_names)
+
+deaths.apply(fill_data, axis=1)
 
 pd.set_option('display.max_rows', None)
 print(deaths)
