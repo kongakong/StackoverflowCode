@@ -1,3 +1,4 @@
 python-ve
 .envrc
 .terraform
+.venv*
