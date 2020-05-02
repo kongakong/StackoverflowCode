@@ -8,6 +8,8 @@ req = requests.get(url)
 html = BeautifulSoup(req.text, "html.parser")
 table = html.find("table")
 header = []
-for cols in table.findAll('th',class_="r1 cols"):
+print(table)
+for cols in table.findAll('th', {'class':["r1", "cols"]}):
+    # print(cols)
     header.append(cols)
 print(header)
