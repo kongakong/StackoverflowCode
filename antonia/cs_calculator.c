@@ -9,11 +9,12 @@ int main (void){
     int calculatingnumber = 0;
     int output = 1;
     int counter = 0;
+    int pressed_eof = 1;
 
-while (loop ==1) {
-printf("Enter instruction: ");
-        scanf(" %c", &command);
-        scanf("%d", &number);
+    printf("Enter instruction: ");
+    while (pressed_eof == 1) {
+            scanf("%c", &command);
+            scanf("%d", &number);
             if (command == 's') {   
                 output = number * number;
                 printf("%d\n", output);
@@ -22,14 +23,16 @@ printf("Enter instruction: ");
                 scanf("%d", &calculatingnumber);
                 counter = 0;
                 for (counter = 0; counter < calculatingnumber; counter++) {
-                output = output * number;
+                    output = output * number;
                 }
                 printf("%d\n", output);
             }
             else {
                 return 1;
             }
-}
+        printf("Enter instruction: ");
+        pressed_eof = scanf("%c", &command);
+    }
         
     return 0;
 }
