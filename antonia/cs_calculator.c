@@ -9,10 +9,10 @@ int main (void){
     int calculatingnumber = 0;
     int output = 1;
     int counter = 0;
-    int pressed_eof = 1;
+    int not_pressed_eof = 1;
 
     printf("Enter instruction: ");
-    while (pressed_eof == 1) {
+    while (not_pressed_eof == 1) {
             scanf("%c", &command);
             scanf("%d", &number);
             if (command == 's') {   
@@ -31,7 +31,7 @@ int main (void){
                 return 1;
             }
         printf("Enter instruction: ");
-        pressed_eof = scanf("%c", &command);
+        not_pressed_eof = scanf("%c", &command);
     }
         
     return 0;
