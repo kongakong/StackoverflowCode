@@ -8,6 +8,8 @@ class Bug:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+        self.color = 'red'
+
 
 class Tile:
     def __init__(self, is_log=False, has_bug=False):
@@ -21,27 +23,27 @@ class Tile:
 
 
 def print_board():
-    global game_board     
+    global game_board
     for rows in game_board:
         row_line = ",".join(str(tile) for tile in rows)
         print(row_line)
     print("\n")
 
+
 def move_bug(bug, x_direction, y_direction, move_step):
-    global game_board     
+    global game_board
     old_x_pos = bug.x
     old_y_pos = bug.y
     bug.x = bug.x + move_step * x_direction
     bug.y = bug.y + move_step * y_direction
     game_board[old_y_pos][old_x_pos].has_bug = False
-    game_board[bug.y][bug.x].has_bug = True 
+    game_board[bug.y][bug.x].has_bug = True
     print_board()
-
 
 
 def main():
 
-    global game_board 
+    global game_board
     game_board = []
     for y in range(0, 9):
         board_row = []
@@ -56,6 +58,7 @@ def main():
     x_direction = 1  # 0 for no move, 1 for right, -1 for left
     y_direction = 0  # 0 for no move, 1 for down, -1 for up
 
+    # add a bug
     bug = Bug(y=7, x=2)
     game_board[bug.y][bug.x].has_bug = True
     print_board()
@@ -63,11 +66,15 @@ def main():
     # let move B to right
     print("Move to right (1)")
     move_bug(bug, 1, 0, 1)
+    # move again
+    move_bug(bug, 1, 0, 1)
+    # move again
+    move_bug(bug, 1, 0, 1)
 
     # let move B to right
     print("Move to left (-1)")
     move_bug(bug, -1, 0, 1)
-    
+
     print("Move up (-1)")
     move_bug(bug, 0, -1, 1)
 
