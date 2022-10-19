@@ -79,6 +79,12 @@ def main():
     move_bug(bug, 0, -1, 1)
 
     move_bug(bug, 0, -1, 1)
+    
+    # look forward
+    y_direction = 1 
+    x_direction = -1
+    next_tile = game_board[bug.y + y_direction][bug.x + x_direction]
+    print(str(next_tile))
 
 
 if __name__ == "__main__":
